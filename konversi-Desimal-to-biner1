@@ -1,0 +1,18 @@
+#include<stdio.h>
+
+int main(){
+    int num, decimal, remainder, basis = 1, biner = 0;
+   
+    printf("masukan bilangan desimal = ");
+    scanf("%d", &num);
+    decimal = num;
+    while (num>0){
+        remainder = num%2;
+		printf("%d % 2 : %d\n", num, remainder);
+        biner = biner + remainder*basis;
+        num=num/2;
+        basis= basis*10;
+    }
+    printf("input angka adalah = %d\n",decimal);
+    printf("sama dengan biner = %d\n", biner);
+}
