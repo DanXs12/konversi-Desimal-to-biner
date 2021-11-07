@@ -1,0 +1,46 @@
+#include <stdio.h>
+int data[100];
+int n, i, j, tmp;
+
+int scan (int n, int data[])  //parameter memasukan data
+{
+ for (i = 0; i < n; i++)  //perulangan untuk memasukan nilai ke dalam array
+ {
+  printf ("Masukkan Angka ke %d : ", i+1);
+  scanf ("%d", &data[i]);
+ }
+}
+
+int proses (int n, int data[]) //parameter proses
+{
+ for (i = 0; i < n; i++)//perulangan untuk memasukan kedalam array
+    {
+        for (j = i + 1; j < n; j++) //digunakan logika penukaran dan perulangan mengurutkan angka
+        {
+            if (data[i] > data[j]){
+                tmp = data[i];
+                data[i] = data[j];
+                data[j] = tmp;
+                }
+        }
+    }
+}
+
+int print (int n, int data[] )  //parameter tampilan hasil
+{
+ printf ("\nHasil pengurutan angka\n");
+ for (i = 0; i < n; i++)  //perulangan untk menampilkan hasil
+    {
+        printf ("%d ",data[i]);
+    }
+}
+
+int main()
+{
+    printf ("Masukan jumlah data : ");
+    scanf ("%d", &n);  //masukan jumlah elemen
+
+    scan (n, data);  //pemanggilan untuk masukan isi array
+    proses (n, data);  //pemanggilan untuk proses
+    print (n, data);  //pemanggilan tampilan hasil
+}
