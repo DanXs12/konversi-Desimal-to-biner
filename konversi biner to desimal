@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	int biner,desi,dua;
+	dua=1;
+	desi=0;
+
+	printf("Masukkan Bilangan Biner    : ");
+	scanf("%d",&biner);
+	
+	do{
+		desi+=(biner%2)*dua;
+		dua*=2;
+		biner/=10;
+	}while (biner);
+	
+	printf("Bilangan Desimalnya adalah : %d\n \n",desi);
+
+}
+  
